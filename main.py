@@ -30,8 +30,8 @@ def remove_branch(branch_name):
 
 
 def main():
-    branch_count = 10
-    commit_count = 10
+    branch_count = 1
+    commit_count = 60 * 24
     for i in range(branch_count):
         branch_name = "branch" + str(i)
         git_branch(branch_name, True)
