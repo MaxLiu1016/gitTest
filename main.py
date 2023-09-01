@@ -30,17 +30,22 @@ def remove_branch(branch_name):
 
 
 def main():
-    # for i in range(10):
-    #     branch_name = "branch" + str(i)
-    #     git_branch(branch_name, True)
-    #     for j in range(10):
-    #         random_string(1000)
-    #         commit_msg = f"{branch_name} commit {j}"
-    #         git_commit(commit_msg)
-    # os.system("git checkout master")
+    branch_count = 10
+    commit_count = 10
+    for i in range(branch_count):
+        branch_name = "branch" + str(i)
+        git_branch(branch_name, True)
+        for j in range(commit_count):
+            # random_string(1000)
+            # 隨機產生10個檔案並且每個檔案內容為1000個字元
+            for k in range(1):
+                random_string(1000, "config" + str(k), "config" + str(k) + ".txt")
+            commit_msg = f"{branch_name} commit {j}"
+            git_commit(commit_msg)
+        os.system("git checkout master")
 
-    for i in range(10):
-        remove_branch("branch" + str(i))
+    # for i in range(branch_count):
+    #     remove_branch("branch" + str(i))
 
 
 main()
