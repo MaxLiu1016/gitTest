@@ -27,8 +27,6 @@ def git_commit(commit_name):
 
 def remove_branch(branch_name):
     os.system("git branch -d " + branch_name)
-    os.system("git push origin --delete " + branch_name)
-    os.system("git fetch -p")
 
 
 def main():
