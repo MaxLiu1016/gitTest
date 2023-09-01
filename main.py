@@ -25,16 +25,25 @@ def git_commit(commit_name):
     os.system("git push")
 
 
+def remove_branch(branch_name):
+    os.system("git branch -d " + branch_name)
+    os.system("git push origin --delete " + branch_name)
+    os.system("git fetch -p")
+
+
 def main():
+    # for i in range(10):
+    #     branch_name = "branch" + str(i)
+    #     git_branch(branch_name, True)
+    #     for j in range(10):
+    #         random_string(1000)
+    #         commit_msg = f"{branch_name} commit {j}"
+    #         git_commit(commit_msg)
+    # os.system("git checkout master")
+
     for i in range(10):
-        branch_name = "branch" + str(i)
-        git_branch(branch_name, True)
-        for j in range(10):
-            random_string(1000)
-            commit_msg = f"{branch_name} commit {j}"
-            git_commit(commit_msg)
-    os.system("git checkout master")
+        remove_branch("branch" + str(i))
 
 
-    main()
+main()
 
